@@ -21,16 +21,18 @@ factorize(N, Factor, Factors) ->
 is_factor(N, Factor) -> N rem Factor == 0.
 
 factorize_test_() ->
-    [?_assertEqual([], factorize(0)),
-     ?_assertEqual([], factorize(1)),
-     ?_assertEqual([2], factorize(2)),
-     ?_assertEqual([3], factorize(3)),
-     ?_assertEqual([2,2], factorize(4)),
-     ?_assertEqual([5], factorize(5)),
-     ?_assertEqual([2,3], factorize(6)),
-     ?_assertEqual([17], factorize(17)),
-     ?_assertEqual([2,2,5], factorize(20)),
-     ?_assertEqual([2,13], factorize(26)),
-     ?_assertEqual([2,2,2,2,3], factorize(48)),
-     ?_assertEqual([3,7,7], factorize(147)),
-     ?_assertEqual([5,7,13,29], factorize(13195))].
+    [ ?_assertEqual(Expected, Got) || {Got, Expected}
+        <- [{factorize(0), []},
+            {factorize(1), []},
+            {factorize(2), [2]},
+            {factorize(3), [3]},
+            {factorize(4), [2,2]},
+            {factorize(5), [5]},
+            {factorize(6), [2,3]},
+            {factorize(17), [17]},
+            {factorize(20), [2,2,5]},
+            {factorize(26), [2,13]},
+            {factorize(48), [2,2,2,2,3]},
+            {factorize(147), [3,7,7]},
+            {factorize(13195), [5,7,13,29]}]
+    ].
