@@ -12,13 +12,13 @@
 % even-valued terms.
 
 sum_even(UpperBound) ->
-    sum_even(UpperBound, {1, 1, 0}).
+    sum_even(UpperBound, 1, 1, 0).
 
-sum_even(UpperBound, {_, N2, Sum}) when N2 > UpperBound -> Sum;
-sum_even(UpperBound, {N1, N2, Sum}) ->
+sum_even(UpperBound, _, N2, Sum) when N2 > UpperBound -> Sum;
+sum_even(UpperBound, N1, N2, Sum) ->
     case is_even(N2) of
-        true -> sum_even(UpperBound, {N2, N1 + N2, Sum + N2});
-        false -> sum_even(UpperBound, {N2, N1 + N2, Sum})
+        true -> sum_even(UpperBound, N2, N1 + N2, Sum + N2);
+        false -> sum_even(UpperBound, N2, N1 + N2, Sum)
     end.
 
 is_even(N) -> N rem 2 == 0.
