@@ -18,7 +18,7 @@ three_or_five(N, Sum) when N > 0 ->
     end.
 
 is_multiple_of_three_or_five(N) ->
-    is_multiple_of_three(N) or is_multiple_of_five(N).
+    is_multiple_of_three(N) orelse is_multiple_of_five(N).
 is_multiple_of_three(N) -> N rem 3 == 0.
 is_multiple_of_five(N) -> N rem 5 == 0.
 
