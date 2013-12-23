@@ -11,7 +11,6 @@ three_or_five(N) -> three_or_five(N - 1, 0).
 
 three_or_five(N, Sum) when N < 0 -> Sum;
 three_or_five(0, Sum) -> Sum;
-
 three_or_five(N, Sum) when N > 0 ->
     case is_multiple_of_three_or_five(N) of
         true -> three_or_five(N - 1, Sum + N);
