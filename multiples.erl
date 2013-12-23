@@ -13,13 +13,13 @@ three_or_five(N, Sum) when N < 0 -> Sum;
 three_or_five(0, Sum) -> Sum;
 
 three_or_five(N, Sum) when N > 0 ->
-  case is_multiple_of_three_or_five(N) of
-    true -> three_or_five(N - 1, Sum + N);
-    false -> three_or_five(N - 1, Sum)
-  end.
+    case is_multiple_of_three_or_five(N) of
+        true -> three_or_five(N - 1, Sum + N);
+        false -> three_or_five(N - 1, Sum)
+    end.
 
 is_multiple_of_three_or_five(N) ->
-  is_multiple_of_three(N) or is_multiple_of_five(N).
+    is_multiple_of_three(N) or is_multiple_of_five(N).
 is_multiple_of_three(N) -> N rem 3 == 0.
 is_multiple_of_five(N) -> N rem 5 == 0.
 
