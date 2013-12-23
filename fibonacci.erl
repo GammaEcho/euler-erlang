@@ -23,10 +23,11 @@ sum_even(UpperBound, N1, N2, Sum) ->
 
 is_even(N) -> N rem 2 == 0.
 
-sum_even_1_test() -> ?assert(sum_even(1) == 0).
-sum_even_2_test() -> ?assert(sum_even(2) == 2).
-sum_even_3_test() -> ?assert(sum_even(3) == 2).
-sum_even_5_test() -> ?assert(sum_even(5) == 2).
-sum_even_8_test() -> ?assert(sum_even(8) == 10).
-sum_even_13_test() -> ?assert(sum_even(13) == 10).
-sum_even_34_test() -> ?assert(sum_even(34) == 44).
+sum_even_test_() ->
+    [?_assert(sum_even(1) == 0),
+     ?_assert(sum_even(2) == 2),
+     ?_assert(sum_even(3) == 2),
+     ?_assert(sum_even(5) == 2),
+     ?_assert(sum_even(8) == 10),
+     ?_assert(sum_even(13) == 10),
+     ?_assert(sum_even(34) == 44)].
