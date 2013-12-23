@@ -23,9 +23,9 @@ is_multiple_of_three(N) -> N rem 3 == 0.
 is_multiple_of_five(N) -> N rem 5 == 0.
 
 three_or_five_test_() ->
-    [?_assert(three_or_five(0) == 0),
-     ?_assert(three_or_five(1) == 0),
-     ?_assert(three_or_five(4) == 3),
-     ?_assert(three_or_five(6) == 8),
-     ?_assert(three_or_five(7) == 14),
-     ?_assert(three_or_five(10) == 23)].
+    [?_assertEqual(0, three_or_five(0)),
+     ?_assertEqual(0, three_or_five(1)),
+     ?_assertEqual(3, three_or_five(4)),
+     ?_assertEqual(8, three_or_five(6)),
+     ?_assertEqual(14, three_or_five(7)),
+     ?_assertEqual(23, three_or_five(10))].
