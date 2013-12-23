@@ -11,7 +11,9 @@
 % valuesdo not exceed four million, find the sum of the
 % even-valued terms.
 
-sum_even(UpperBound) -> sum_even(UpperBound, {1, 1, 0}).
+sum_even(UpperBound) ->
+    sum_even(UpperBound, {1, 1, 0}).
+
 sum_even(UpperBound, {_, N2, Sum}) when N2 > UpperBound -> Sum;
 sum_even(UpperBound, {N1, N2, Sum}) ->
     case is_even(N2) of
