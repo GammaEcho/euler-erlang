@@ -11,10 +11,10 @@ factorize(N) when N == 1 -> [];
 factorize(N) when N > 1 ->
     factorize(N, 2, []).
 
-factorize(1, _Factor, Factors) -> Factors;
+factorize(1, _Factor, Factors) -> lists:reverse(Factors);
 factorize(N, Factor, Factors) ->
     case is_factor(N, Factor) of
-        true -> factorize(round(N / Factor), Factor, lists:append(Factors, [Factor]));
+        true -> factorize(round(N / Factor), Factor, [Factor|Factors]);
         false -> factorize(N, Factor + 1, Factors)
     end.
 
